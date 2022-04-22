@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>00x1</title>
+    <title>Form</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>00x1</h2>
+
+  <div class="container">
+    <h2>Mileage Tracker</h2>
+    <form id="form" class="submit-form" autocomplete="off">
+
+        <div class="wrapper">
+            <div class="box">
+            <input type ="text" name="Name" id="email" required>    
+            <label for="email">Name</label>            
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="box">
+            <input type="text" name="Message" id="Message" required> 
+            <label for="password">Message</label>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="box">
+            <input class="date" type="date" name="Time" id="" required>
+            </div>
+        </div>
+        <input type="submit" name="" id="submit_btn" value="Submit">
+    </form>
+  </div>
+
+
+    <!-- Append to Google Forms -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxhz9F-hILfCHRatIi623gWHNG5EgvvUAUHNYy30tZgg_gwSPd9UpABPcYUPg9Mb4Tx/exec'
+        const form = document.querySelector('#form')
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+
+            console.log(form)
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => { alert('Success!', response) })
+                .catch(error => alert('Error!', error.message))
+            form.reset();
+        })
+    </script>
+
+
 </body>
 </html>
