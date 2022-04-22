@@ -11,27 +11,53 @@
 <body>
 
   <div class="container">
-    <h2>Mileage Tracker</h2>
+    <h5>Mileage Tracker</h5>
+
     <form id="form" class="submit-form" autocomplete="off">
 
         <div class="wrapper">
             <div class="box">
-            <input type ="text" name="Name" id="email" required>    
-            <label for="email">Name</label>            
+            <input type ="date" name="Date" id="date" required>            
             </div>
-        </div>
+        </div><br/>
+
         <div class="wrapper">
             <div class="box">
-            <input type="text" name="Message" id="Message" required> 
-            <label for="password">Message</label>
-            </div>
+            <input type ="text" name="Description" id="description" placeholder="Description" required>           
+            </div><br/>
         </div>
+        
         <div class="wrapper">
             <div class="box">
-            <input class="date" type="date" name="Time" id="" required>
-            </div>
+            <input type="text" name="Dest Begin" id="dest-begin" placeholder="Dest Begin" required>
+            </div><br/>
         </div>
-        <input type="submit" name="" id="submit_btn" value="Submit">
+
+        <div class="wrapper">
+            <div class="box">
+            <input type="text" name="Dest End" id="dest-end" placeholder="Dest End" required>
+            </div><br/>
+        </div>
+
+        <div class="wrapper">
+            <div class="box">
+            <input type="number" name="ODM Begin" id="odm-begin" placeholder="ODM Begin" required>
+            </div><br/>
+        </div>
+
+        <div class="wrapper">
+            <div class="box">
+            <input type="number" name="ODM End" id="odm-end" placeholder="ODM End" required>
+            </div><br/>
+        </div>
+
+        <div class="wrapper">
+            <div class="box">
+            <input type="number" name="Miles" id="results" placeholder="Mileage" required>
+            </div>
+        </div><br/>
+        
+        <input type="submit" name="" id="submit-btn" value="Submit">
     </form>
   </div>
 
@@ -41,10 +67,25 @@
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxhz9F-hILfCHRatIi623gWHNG5EgvvUAUHNYy30tZgg_gwSPd9UpABPcYUPg9Mb4Tx/exec'
         const form = document.querySelector('#form')
 
+        // math for odometer reading
+        odmBegin = document.getElementById("odm-begin");
+        odmEnd = document.getElementById("odm-end");
+
+        odmEnd.onkeyup=function () {
+            let num_math = 0;
+            let num_string = 0;
+            
+            // odm-begin - odm-end =;
+            num_math = odmBegin.value - odmEnd.value;
+            num_string = num_math;
+            document.getElementById("results").value = num_string;
+        }
+
+        // submit form
         form.addEventListener('submit', e => {
             e.preventDefault()
 
-            console.log(form)
+            console.log(form)            
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => { alert('Success!', response) })
                 .catch(error => alert('Error!', error.message))
