@@ -1,0 +1,129 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: url('../img/Morning_Fog_Emerging_From_Trees-1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+}
+.wrapper::before,
+.wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    background: url('../img/fog-1.png') repeat-x center center,
+                url('../img/fog-1.png') repeat-x center center;
+    background-size: 200% auto;
+    background-position: left top, right top;
+    opacity: 0.3;
+    z-index: 1;
+    animation: fogScroll 20s linear infinite;
+}
+.wrapper::after {
+    animation-delay: 10s;
+}
+@keyframes fogScroll {
+    from {
+        background-position: left top, right top;
+    }
+    to {
+        background-position: -100% top, 100% top;
+    }
+}
+.container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.container h2 {
+    font-size: 40px;
+    font-weight: 100;
+    margin-bottom: 10px;
+    letter-spacing: 10px;
+    color: rgba(0,0,0,1);
+    border-bottom: 1px solid;
+    font-weight: 100;
+    line-height: 1.5;
+}
+.countdown p, .countdown b {
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    color: #333333;
+    display: inline-block;
+    margin: 0 2px;
+}
+footer {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #050505;
+    color: #a5a5a5;
+    padding: 10px 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.attribution p {
+    z-index: 3;
+    font-size: 14px;
+    font-weight: 200;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #a5a5a5;
+    display: inline-block;
+}
+footer a {
+    color: #FFa5a5;
+}
+footer a:visited {
+    color: #FFa5a5;
+}
+footer a:hover {
+    color: #FF3322;
+}
+@media(max-width: 800px) {
+    .attribution p {
+        text-align: center;
+        display: block;
+    }
+}
+@media(max-width: 702px) {
+    .attribution p {
+        text-align: center;
+        display: block;
+    }
+    .wrapper::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 1000% auto;
+
+    }
+}
