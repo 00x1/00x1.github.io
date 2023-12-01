@@ -104,17 +104,32 @@ footer a:visited {
 footer a:hover {
     color: #FF3322;
 }
-@media(max-width: 800px) {
+@media(max-width: 1024px) {
+    .container h2 {
+        font-size: 40px;
+        font-weight: 100;
+        margin-bottom: 10px;
+        letter-spacing: 4px;
+        color: rgba(0,0,0,1);
+        border-bottom: 1px solid;
+        font-weight: 100;
+        line-height: 1.5;
+    }
+    footer {
+        display: block;
+    }
     .attribution p {
+        font-size: 14px;
         text-align: center;
+        display: block;
+    }
+    .author-name,
+    .author-credit {
+        font-size: 14px;
         display: block;
     }
 }
-@media(max-width: 702px) {
-    .attribution p {
-        text-align: center;
-        display: block;
-    }
+@media(max-width: 768px) {
     .wrapper::after {
         content: '';
         position: absolute;
@@ -124,6 +139,28 @@ footer a:hover {
         width: 100%;
         height: 100%;
         background-size: 1000% auto;
-
+    }
+    .container h2 {
+        font-size: 30px;
+        font-weight: 100;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+        color: rgba(0,0,0,1);
+        border-bottom: 1px solid;
+        font-weight: 100;
+        line-height: 1.5;
+    }
+    footer {
+        display: block;
+    }
+    .attribution p {
+        font-size: 14px;
+        text-align: center;
+        display: block;
+    }
+    .author-name,
+    .author-credit {
+        font-size: 14px;
+        display: block;
     }
 }
