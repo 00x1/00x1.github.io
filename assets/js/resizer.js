@@ -10,17 +10,17 @@ const adjustFooter = () => {
     if (screenWidth <= 856 || screenWidth >= 857) {
         // Create two new anchor elements with the required text
         const firstAnchor = document.createElement('a');
-        firstAnchor.href = 'https://www.flickr.com/people/80901381@N04';
+        firstAnchor.href = 'https://www.flickr.com/photos/80901381@N04/7758832526/';
         firstAnchor.target = '_blank';
         firstAnchor.rel = 'noopener noreferrer';
-        firstAnchor.title = 'CC BY 2.0 Deed - Attribution 2.0';
+        firstAnchor.title = 'Morning Fog Emerging From Trees - CC BY 2.0 Deed - Attribution 2.0';
         firstAnchor.innerText = (screenWidth <= 856) ? 'A Guy Taking Pictures' : 'A Guy Taking Pictures';
 
         const secondAnchor = document.createElement('a');
-        secondAnchor.href = 'https://www.flickr.com/people/80901381@N04';
+        secondAnchor.href = 'https://www.flickr.com/photos/80901381@N04/7758832526/';
         secondAnchor.target = '_blank';
         secondAnchor.rel = 'noopener noreferrer';
-        secondAnchor.title = 'CC BY 2.0 Deed - Attribution 2.0';
+        secondAnchor.title = 'Morning Fog Emerging From Trees - CC BY 2.0 Deed - Attribution 2.0';
         secondAnchor.innerText = '(Samuel S)';
 
         // Insert line break before the (Samuel S) text using innerHTML
