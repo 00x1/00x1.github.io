@@ -1,10 +1,10 @@
 #### Coming-Soon Page
 ##### 00x1.github.io:
-<p>Just a coming soon page for my site.</p>
+Just a coming soon page for my site.
 
 <br>
 ##### Note:
-<p>*Has some errors and could be modified to work right as I just threw it together quickly as a placeholder for now.*</p>
+*Has some errors and could be modified to work right as I just threw it together quickly as a placeholder for now.*
 
 <br>
 #### Example:
