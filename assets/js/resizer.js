@@ -23,7 +23,7 @@ const adjustFooter = () => {
         secondAnchor.title = 'Morning Fog Emerging From Trees - CC BY 2.0 Deed - Attribution 2.0';
         secondAnchor.innerText = '(Samuel S)';
 
-        // Insert line break before the (Samuel S) text using innerHTML
+        // add line break for section 2
         if (screenWidth <= 856) {
             secondAnchor.innerHTML = '<br>' + secondAnchor.innerText;
         } else {
@@ -36,6 +36,6 @@ const adjustFooter = () => {
     }
 };
 
-// Call the adjustFooter function initially and add an event listener for window resize
+// Call the adjustFooter function initially and listen for resize
 adjustFooter();
 window.addEventListener('resize', adjustFooter);
