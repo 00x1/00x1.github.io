@@ -17,10 +17,18 @@ body {
     position: relative;
     z-index: 0;
 }
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 .wrapper::before,
 .wrapper::after {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -35,6 +43,7 @@ body {
     animation: fogScroll 20s linear infinite;
 }
 .wrapper::after {
+    position: fixed;
     animation-delay: 10s;
 }
 @keyframes fogScroll {
@@ -83,6 +92,19 @@ body {
     display: inline-block;
     margin: 0 2px;
 }
+.floating-info-icon {
+    position: fixed;
+    bottom: 5%;
+    right: 1%;
+    z-index: 5;
+}
+.info-icon {
+    cursor: pointer;
+}
+#info-icon {
+    height: 45px;
+    width: 45px;
+}
 footer {
     z-index: 2;
     position: absolute;
@@ -104,7 +126,9 @@ footer {
     text-align: center;
     letter-spacing: 2px;
     color: #a5a5a5;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 footer a {
     color: #FFa5a5;
@@ -115,7 +139,147 @@ footer a:visited {
 footer a:hover {
     color: #FF3322;
 }
+/* modal window */
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    width: auto;
+    max-width: 500px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 4;
+    position: relative;
+}
+.modal-title {
+    user-select: none;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 0px;
+    font-size: 14px;
+    margin-top: -20px;
+    margin-right: 0px;
+    margin-left: -20px;
+}
+.cc-by {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cc-by svg {
+    margin-right: -3px;
+    margin-left: 2px;
+}
+.close {
+    position: absolute;
+    top: -5px;
+    right: -6px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.attribution-modal {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+}
+.attribution-modal a {
+    color: #000;
+}
+.attribution-modal a:hover {
+    text-decoration: underline;
+}
+.blur {
+    filter: blur(4px);
+}
+/* height checks */
+@media(max-height: 856px) {
+    .floating-info-icon {
+        position: fixed;
+        bottom: 6%;
+        right: 1%;
+        z-index: 5;
+    }
+    .info-icon {
+        cursor: pointer;
+    }
+    #info-icon {
+        width: 45px;
+        height: 45px;
+    }
+}
+@media(max-height: 686px) {
+    .floating-info-icon {
+        position: fixed;
+        bottom: 7.5%;
+        right: 1%;
+        z-index: 5;
+    }
+    .info-icon {
+        cursor: pointer;
+    }
+    #info-icon {
+        width: 45px;
+        height: 45px;
+    }
+}
+@media(max-height: 500px) {
+    .floating-info-icon {
+        position: fixed;
+        bottom: 10%;
+        right: 1%;
+        z-index: 999;
+    }
+    .info-icon {
+        cursor: pointer;
+    }
+    #info-icon {
+        width: 45px;
+        height: 45px;
+    }
+    .footer {
+        z-index: 888;
+    }
+}
+@media(max-height: 350px) {
+    .floating-info-icon {
+        position: fixed;
+        bottom: 15%;
+        right: 1%;
+        z-index: 999;
+    }
+    .info-icon {
+        cursor: pointer;
+    }
+    #info-icon {
+        width: 45px;
+        height: 45px;
+    }
+}
+/* width checks */
 @media(max-width: 1024px) {
+    body {
+        height: 100vh;
+    }
     .container h2 {
         font-size: 40px;
         font-weight: 100;
@@ -125,6 +289,19 @@ footer a:hover {
         border-bottom: 1px solid;
         font-weight: 100;
         line-height: 1.5;
+    }
+    .floating-info-icon {
+        position: fixed;
+        bottom: 5%;
+        right: 1%;
+        z-index: 5;
+    }
+    .info-icon {
+        cursor: pointer;
+    }
+    #info-icon {
+        width: 45px;
+        height: 45px;
     }
     footer {
         display: block;
@@ -160,6 +337,19 @@ footer a:hover {
         border-bottom: 1px solid;
         font-weight: 100;
         line-height: 1.5;
+    }
+    .floating-info-icon {
+        position: fixed;
+        bottom: 5%;
+        right: 2%;
+        z-index: 5;
+    }
+    .info-icon {
+        cursor: pointer;
+    }
+    #info-icon {
+        width: 45px;
+        height: 45px;
     }
     footer {
         display: block;
@@ -212,6 +402,19 @@ footer a:hover {
         border-bottom: 1px solid;
         font-weight: 100;
         line-height: 1.5;
+    }
+    .floating-info-icon {
+        position: fixed;
+        bottom: 5%;
+        right: 3%;
+        z-index: 5;
+    }
+    .info-icon {
+        cursor: pointer;
+    }
+    #info-icon {
+        width: 45px;
+        height: 45px;
     }
     footer {
         display: block;

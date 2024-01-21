@@ -2,42 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=no" media="(max-width: 767px)">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=no" media="(min-width: 768px) and (max-width: 1024px)">
     <title>www.ifelsethen.com - coming soon</title>
-    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="site.webmanifest">    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">    
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png?=v2">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png?=v2">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?=v2">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?=v2">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?=v2">
+    <link rel="shortcut icon" href="favicon.ico?=v2" type="image/x-icon">
+    <link rel="manifest" href="site.webmanifest?=v2">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <link rel="stylesheet" href="./assets/css/style.css?=?=v2.0.5">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container">
-            <div class="main-content">
-                <h2>COMING SOON</h2>
+    <div class="modal-wrapper">
+        <div class="wrapper">
+            <div class="container">
+                <div class="main-content">
+                    <h2>COMING SOON</h2>
+                </div>
+                <div class="countdown">
+                    <div class="countdown-grid">
+                        <p><b class="days"></b></p>
+                        <p><b class="hours"></b></p>
+                    </div>
+                    <div class="countdown-grid">
+                        <p><b class="minutes"></b></p>
+                        <p><b class="seconds"></b></p>
+                    </div>
+                </div>
             </div>
-            <div class="countdown">
-                <div class="countdown-grid">
-                    <p><b class="days"></b></p>
-                    <p><b class="hours"></b></p>
-                </div>
-                <div class="countdown-grid">
-                    <p><b class="minutes"></b></p>
-                    <p><b class="seconds"></b></p>
-                </div>
-            </div>            
+            <div class="floating-info-icon">
+                <span class="info-icon" title="Show Attributions Info">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="info-icon" width="25" height="25" viewBox="0 0 24 24">
+                        <path fill="#FFFFFF"
+                            d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z" />
+                    </svg>
+                </span>
+            </div>
         </div>
     </div>
+    
     <footer>
         <div class="attribution">
-            <p>&copy;2023 - IfElseThen</p>
+            <p>&copy;2024 - IfElseThen</p>
         </div>
-    </footer>    
+    </footer>
+    
+    <div id="modalContainer" class="modal-container">
+        <div class="modal-content">
+            <div class="modal-title">Attributions</div>
+            <span class="close" id="closeModal" title="Close Window">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                    <path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m9 9l3 3m0 0l3 3m-3-3l-3 3m3-3l3-3M4 16.8V7.2c0-1.12 0-1.68.218-2.108c.192-.377.497-.682.874-.874C5.52 4 6.08 4 7.2 4h9.6c1.12 0 1.68 0 2.108.218a2 2 0 0 1 .874.874C20 5.52 20 6.08 20 7.2v9.6c0 1.12 0 1.68-.218 2.108a2.001 2.001 0 0 1-.874.874c-.428.218-.986.218-2.104.218H7.197c-1.118 0-1.678 0-2.105-.218a2 2 0 0 1-.874-.874C4 18.48 4 17.92 4 16.8" />
+                </svg>
+            </span>
+            <div class="attribution-modal">
+                <p>Background Image By: <br><a href="https://www.flickr.com/people/80901381@N04" target="_blank">A Guy Taking Pictures</a></p><br>
+                <p>On Wikimedia: <br><a
+                        href="https://commons.wikimedia.org/wiki/File:Morning_Fog_Emerging_From_Trees.jpg" target="_blank">
+                        Morning Fog Emerging From Trees.jpg</a></p><br>
+                <div class="cc-by">
+                    <p>License:</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24">
+                        <path fill="#000000"
+                            d="M9 8c1.104 0 2.105.448 2.829 1.173l-1.414 1.413a2 2 0 1 0 0 2.828l1.413 1.414A4.001 4.001 0 0 1 5 12c0-2.208 1.792-4 4-4m9.829 1.173A4.001 4.001 0 0 0 12 12a4.001 4.001 0 0 0 6.828 2.828l-1.414-1.414a2 2 0 1 1 0-2.828zM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12m10-8a8 8 0 1 0 0 16a8 8 0 0 0 0-16" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24">
+                        <path fill="#000000"
+                            d="M14 7a2 2 0 1 1-4 0a2 2 0 0 1 4 0m1 4a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v4h1.5v4h3v-4H15zm-3-9C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2M4 12a8 8 0 1 1 16 0a8 8 0 0 1-16 0" />
+                    </svg>
+                </div>
+                <p><a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">Creative Commons Attribution
+                        2.0 Generic</a></p><br>
+            </div>
+        </div>
+    </div>
 
-    <script src="./assets/js/timer.js"></script>
+    <script src="./assets/js/timer.js?=v2.0.1"></script>
+    <script src="./assets/js/modal.js?=v2.0.3"></script>
 </body>
 </html>
